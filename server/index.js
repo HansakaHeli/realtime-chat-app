@@ -13,6 +13,14 @@ const uri = process.env.MDB_CONNECT;
 app.use(express.json());
 app.use(cors());
 
+app.get("/",(req,res)=>{
+    res.send("Api is running");
+})
+
+app.get("/api/chat",(req,res)=>{
+    
+})
+
 // connect to mongodb
 mongoose.connect(uri)
 .then(() => {
