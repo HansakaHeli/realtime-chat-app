@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const dotenv = require("dotenv")
+const dotenv = require("dotenv");
+const { chats } = require("./data/data");
 
 dotenv.config();
 
@@ -15,11 +16,11 @@ app.use(cors());
 
 app.get("/",(req,res)=>{
     res.send("Api is running");
-})
+});
 
 app.get("/api/chat",(req,res)=>{
-    
-})
+    res.send(chats)
+});
 
 // connect to mongodb
 mongoose.connect(uri)
